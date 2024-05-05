@@ -16,8 +16,8 @@ detect_llvm_version() {
 LLVM_VERSION=$(detect_llvm_version)
 echo ${LLVM_VERSION}
 # LLVM
-# curl -sL https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/llvm-project-${LLVM_VERSION}.src.tar.xz -o llvm-project-${LLVM_VERSION}.src.tar.xz
-curl -sL https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/llvm-project-${LLVM_VERSION}.tar.xz -o llvm-project-${LLVM_VERSION}.src.tar.xz
+curl -sL https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/llvm-project-${LLVM_VERSION}.src.tar.xz -o llvm-project-${LLVM_VERSION}.src.tar.xz
+# curl -sL https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/llvm-project-${LLVM_VERSION}.tar.xz -o llvm-project-${LLVM_VERSION}.src.tar.xz
 unxz llvm-project-${LLVM_VERSION}.src.tar.xz
 tar xf llvm-project-${LLVM_VERSION}.src.tar
 pushd llvm-project-${LLVM_VERSION}.src
