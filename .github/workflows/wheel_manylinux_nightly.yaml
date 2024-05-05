@@ -74,4 +74,3 @@ jobs:
         files: tvm/python/repaired_wheels/*.whl
         tag_name: v0.12.dev
         prerelease: true
-
