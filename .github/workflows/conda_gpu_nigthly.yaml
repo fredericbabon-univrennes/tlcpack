@@ -58,6 +58,7 @@ jobs:
         environment-file: conda/build-environment.yaml
         auto-activate-base: false
         use-only-tar-bz2: true
+        use-mamba: false
     - name: Conda info
       run: |
         conda info
