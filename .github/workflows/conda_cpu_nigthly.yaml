@@ -19,6 +19,7 @@ jobs:
         # os: [windows-2019, macOS-latest, ubuntu-latest]
         os: [ubuntu-latest]
         pkg: ['tlcpack', 'tlcpack-nightly']
+        python-version: ["3.10"]
 
     runs-on: ${{ matrix.os }}
 
@@ -42,6 +43,7 @@ jobs:
         key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('conda/build-environment.yaml') }}
     - uses: conda-incubator/setup-miniconda@v3
       with:
+        python-version: ${{ matrix.python-version }}
         activate-environment: tlcpack-build
         channel-priority: strict
         environment-file: conda/build-environment.yaml
