@@ -54,7 +54,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
         activate-environment: tlcpack-build
         channels: conda-forge,defaults
-        channel-priority: strict
+        channel-priority: disabled
         environment-file: conda/build-environment.yaml
         auto-activate-base: false
         use-only-tar-bz2: true
