@@ -104,6 +104,7 @@ def run_prune(args, group_map):
 
 def list_wheels(repo):
     gh = github3.login(token=os.environ["GITHUB_TOKEN"])
+    assert gh is not None, "GitHub login failed"
     repo = gh.repository(*repo.split("/"))
     wheels = []
 
