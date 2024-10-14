@@ -16,6 +16,7 @@ jobs:
     strategy:
       matrix:
         pkg: ['tlcpack', 'tlcpack-nightly']
+        python-version: ["3.10"]
         config:
           - cuda: '10.2'
             image: 'tlcpack/package-cu102:2fddbe0'
@@ -50,6 +51,7 @@ jobs:
         key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('conda/build-environment.yaml') }}
     - uses: conda-incubator/setup-miniconda@v3
       with:
+        python-version: ${{ matrix.python-version }}
         activate-environment: tlcpack-build
         channel-priority: strict
         environment-file: conda/build-environment.yaml
