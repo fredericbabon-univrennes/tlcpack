@@ -20,7 +20,7 @@ jobs:
         # matrix of build configs
         config:
           - cuda: 'none'
-            image: 'philippvk/package-cpu:2fddbe0'
+            image: 'philippvk/package-cpu:b2eab7a'
             package_name: 'apache-tvm'
 
     runs-on: ubuntu-latest

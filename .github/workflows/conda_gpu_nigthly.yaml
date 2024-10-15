@@ -19,16 +19,16 @@ jobs:
         python-version: ["3.10"]
         config:
           - cuda: '10.2'
-            image: 'philippvk/package-cu102:2fddbe0'
+            image: 'philippvk/package-cu102:b2eab7a'
           # Conda forge is not shipping a cudnn package with support for CUDA 11.0
           # - cuda: '11.0'
-          #   image: 'philippvk/package-cu110:2fddbe0'
+          #   image: 'philippvk/package-cu110:b2eab7a'
           - cuda: '11.1'
-            image: 'philippvk/package-cu111:2fddbe0'
+            image: 'philippvk/package-cu111:b2eab7a'
           - cuda: '11.3'
             image: 'philippvk/package-cu113:2fddbe0'
           - cuda: '11.6'
-            image: 'philippvk/package-cu116:2fddbe0'
+            image: 'philippvk/package-cu116:b2eab7a'
 
     runs-on: ubuntu-latest
 

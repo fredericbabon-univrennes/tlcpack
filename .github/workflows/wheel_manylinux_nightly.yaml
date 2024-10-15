@@ -20,7 +20,7 @@ jobs:
         # matrix of build configs
         config:
           - cuda: 'none'
-            image: 'philippvk/package-cpu:2fddbe0'
+            image: 'philippvk/package-cpu:b2eab7a'
           # - cuda: '10.2'
           #   image: 'philippvk/package-cu102:2fddbe0'
           # # CUDA 11.0 is not supported for Conda build,
