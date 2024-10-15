@@ -29,6 +29,8 @@ jobs:
             image: 'philippvk/package-cu113:2fddbe0'
           - cuda: '11.6'
             image: 'philippvk/package-cu116:b2eab7a'
+          - cuda: '11.7'
+            image: 'philippvk/package-cu117:b2eab7a'
 
     runs-on: ubuntu-latest
 
