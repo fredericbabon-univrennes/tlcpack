@@ -78,7 +78,7 @@ jobs:
     - name: Conda-Build@Linux
       if: startsWith(matrix.os, 'ubuntu')
       shell: bash -l {0}
-      run: >-
+      run: |
         # conda install conda-forge::libmamba
         # conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
         conda install -n base conda-libmamba-solver
