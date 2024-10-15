@@ -15,6 +15,7 @@ on:
 jobs:
   Build:
     strategy:
+      fail-fast: false
       matrix:
         pkg: ['tlcpack-nightly']
         # matrix of build configs
