@@ -39,7 +39,8 @@ jobs:
         conda info
         conda list
     - name: Wheel-Site-Checkout
-      if: ${{ github.ref == 'refs/heads/main' }} && ${{ secrets.TLCPACK_GITHUB_TOKEN != '' }}
+      # if: ${{ github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack' }}
+      if: ${{ github.ref == 'refs/heads/main' }}
       env:
         GITHUB_TOKEN: ${{ secrets.TLCPACK_GITHUB_TOKEN }}
       run: |
@@ -57,7 +58,8 @@ jobs:
         python -m pip install github3.py requests &&
         python wheel/wheel_prune_and_sync.py
     - name: Conda-Prune
-      if: ${{ github.ref == 'refs/heads/main' }} && ${{ secrets.ANACONDA_TOKEN != '' }}
+      if: ${{ github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack' }}
+      # if: ${{ github.ref == 'refs/heads/main' }}
       shell: bash -l {0}
       env:
         ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}

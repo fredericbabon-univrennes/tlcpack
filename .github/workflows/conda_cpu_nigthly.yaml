@@ -86,21 +86,21 @@ jobs:
         conda build --output-folder=conda/pkg -m conda/build_config.yaml conda/recipe
         conda build --output-folder=conda/pkg -m conda/build_config.yaml conda/recipe
     - name: Conda-Deploy@Win
-      if: startsWith(matrix.os, 'windows') && github.ref == 'refs/heads/main' && ${{ secrets.ANACONDA_TOKEN != '' }}
+      if: startsWith(matrix.os, 'windows') && github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack'
       shell: cmd /C call {0}
       env:
         ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
       run: >-
         anaconda upload --force --label main conda/pkg/win-64/*.tar.bz2
     - name: Conda-Deploy@MacOS
-      if: startsWith(matrix.os, 'macOS') && github.ref == 'refs/heads/main' && ${{ secrets.ANACONDA_TOKEN != '' }}
+      if: startsWith(matrix.os, 'macOS') && github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack'
       shell: bash -l {0}
       env:
         ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}
       run: >-
         anaconda upload --force --label main conda/pkg/osx-64/*.tar.bz2
     - name: Conda-Deploy@Linux
-      if: startsWith(matrix.os, 'ubuntu') && github.ref == 'refs/heads/main' && ${{ secrets.ANACONDA_TOKEN != '' }}
+      if: startsWith(matrix.os, 'ubuntu') && github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack'
       shell: bash -l {0}
       env:
         ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_TOKEN }}

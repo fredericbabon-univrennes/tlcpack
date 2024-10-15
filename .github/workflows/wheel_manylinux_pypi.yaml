@@ -63,7 +63,7 @@ jobs:
       run: |
         docker/bash.sh --no-gpu $IMAGE ./wheel/run_tests.sh
     - name: Wheel-Deploy-Pypi
-      if: ${{ github.ref == 'refs/heads/main' }} && ${{ secrets.PYPI_API_KEY != 'skip' }}
+      if: ${{ github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack'}}
       env:
         TWINE_NON_INTERACTIVE: 1
         TWINE_REPOSITORY: pypi
