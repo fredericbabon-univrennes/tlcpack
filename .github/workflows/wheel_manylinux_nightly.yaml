@@ -21,18 +21,20 @@ jobs:
         config:
           - cuda: 'none'
             image: 'philippvk/package-cpu:b2eab7a'
-          # - cuda: '10.2'
-          #   image: 'philippvk/package-cu102:2fddbe0'
-          # # CUDA 11.0 is not supported for Conda build,
-          # # Let's drop support here as well.
-          # # - cuda: '11.0'
-          # #   image: 'philippvk/package-cu110:2fddbe0'
-          # - cuda: '11.1'
-          #   image: 'philippvk/package-cu111:2fddbe0'
-          # - cuda: '11.3'
-          #   image: 'philippvk/package-cu113:2fddbe0'
-          # - cuda: '11.6'
-          #   image: 'philippvk/package-cu116:2fddbe0'
+         - cuda: '10.2'
+            image: 'philippvk/package-cu102:b2eab7a'
+          # CUDA 11.0 is not supported for Conda build,
+          # Let's drop support here as well.
+          # - cuda: '11.0'
+          #   image: 'philippvk/package-cu110:2fddbe0'
+          - cuda: '11.1'
+            image: 'philippvk/package-cu111:b2eab7a'
+          - cuda: '11.3'
+            image: 'philippvk/package-cu113:b2eab7a'
+          - cuda: '11.6'
+            image: 'philippvk/package-cu116:b2eab7a'
+          - cuda: '11.7'
+            image: 'philippvk/package-cu117:b2eab7a'
 
     runs-on: ubuntu-latest
 
