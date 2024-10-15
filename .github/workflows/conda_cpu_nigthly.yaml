@@ -67,6 +67,10 @@ jobs:
       if: startsWith(matrix.os, 'windows')
       shell: cmd /C call {0}
       run: >-
+        # conda install conda-forge::libmamba
+        # conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
+        conda install -n base conda-libmamba-solver
+        conda config --set solver libmamba
         conda build --output-folder=conda/pkg -m conda/build_config.yaml conda/recipe
     - name: Conda-Build@MacOS
       if: startsWith(matrix.os, 'macOS')
