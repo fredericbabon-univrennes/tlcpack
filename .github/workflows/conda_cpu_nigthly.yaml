@@ -67,11 +67,6 @@ jobs:
       if: startsWith(matrix.os, 'windows')
       shell: cmd /C call {0}
       run: >-
-        # conda install conda-forge::libmamba
-        # conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
-        conda install -n base conda-libmamba-solver
-        conda config --set solver libmamba
-        conda build --output-folder=conda/pkg -m conda/build_config.yaml conda/recipe
     - name: Conda-Build@MacOS
       if: startsWith(matrix.os, 'macOS')
       shell: bash -l {0}
@@ -83,6 +78,11 @@ jobs:
       if: startsWith(matrix.os, 'ubuntu')
       shell: bash -l {0}
       run: >-
+        # conda install conda-forge::libmamba
+        # conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
+        conda install -n base conda-libmamba-solver
+        conda config --set solver libmamba
+        conda build --output-folder=conda/pkg -m conda/build_config.yaml conda/recipe
         conda build --output-folder=conda/pkg -m conda/build_config.yaml conda/recipe
     - name: Conda-Deploy@Win
       if: startsWith(matrix.os, 'windows') && github.ref == 'refs/heads/main'
