@@ -26,7 +26,7 @@ jobs:
           - cuda: '11.1'
             image: 'philippvk/package-cu111:b2eab7a'
           - cuda: '11.3'
-            image: 'philippvk/package-cu113:2fddbe0'
+            image: 'philippvk/package-cu113:b2eab7a'
           - cuda: '11.6'
             image: 'philippvk/package-cu116:b2eab7a'
           - cuda: '11.7'

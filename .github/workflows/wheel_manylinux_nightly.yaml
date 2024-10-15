@@ -26,7 +26,7 @@ jobs:
           # CUDA 11.0 is not supported for Conda build,
           # Let's drop support here as well.
           # - cuda: '11.0'
-          #   image: 'philippvk/package-cu110:2fddbe0'
+          #   image: 'philippvk/package-cu110:b2eab7a'
           - cuda: '11.1'
             image: 'philippvk/package-cu111:b2eab7a'
           - cuda: '11.3'
