@@ -84,7 +84,9 @@ jobs:
         CUDA: ${{ matrix.config.cuda }}
       run: |
         df  # Print disk space?
-        docker/bash.sh --no-gpu $IMAGE ./conda/build_cuda.sh  conda/build_config.yaml --cuda $CUDA || (df ; false)
+        export CUDA_VERSION=$CUDA
+        docker/bash.sh --no-gpu $IMAGE ./conda/build_cuda.sh  conda/build_config.yaml --cuda $CUDA
+        df
     - name: Conda-Deploy
       if: github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack'
       shell: bash -l {0}
