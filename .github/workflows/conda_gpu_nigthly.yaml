@@ -44,7 +44,8 @@ jobs:
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
       with:
-        root-reserve-mb: 32768
+        # root-reserve-mb: 32768
+        root-reserve-mb: 24576
         temp-reserve-mb: 1024
         remove-dotnet: 'true'
         remove-android: 'true'
@@ -81,6 +82,13 @@ jobs:
         IMAGE: ${{ matrix.config.image }}
         CUDA: ${{ matrix.config.cuda }}
       run: |
+        echo "A"
+        df  # Print disk space?
+        echo "B"
+        du -ch -d1 .
+        echo "C"
+        du -ch -d1 /
+        echo "D"
         docker/bash.sh --no-gpu $IMAGE ./conda/build_cuda.sh  conda/build_config.yaml --cuda $CUDA
     - name: Conda-Deploy
       if: github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack'
