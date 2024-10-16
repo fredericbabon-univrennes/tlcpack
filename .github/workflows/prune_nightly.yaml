@@ -49,7 +49,7 @@ jobs:
         git config user.email 73483364+tlcpack-archiver@users.noreply.github.com
         cd ..
     - name: Wheel-Prune-Sync
-      if: github.ref == 'refs/heads/main'
+      if: ${{ github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack' }}
       shell: bash -l {0}
       env:
         GITHUB_TOKEN: ${{ secrets.TLCPACK_GITHUB_TOKEN }}
