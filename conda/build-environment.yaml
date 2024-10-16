@@ -16,5 +16,5 @@ dependencies:
   - bzip2
   - make
   - scipy
-  - cython
+  - cython < 3.0
   - pip
