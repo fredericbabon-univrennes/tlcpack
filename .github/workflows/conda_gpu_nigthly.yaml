@@ -19,8 +19,9 @@ jobs:
         pkg: ['tlcpack', 'tlcpack-nightly']
         python-version: ["3.10"]
         config:
-          - cuda: '10.2'
-            image: 'philippvk/package-cu102:b2eab7a'
+          # Unsupported (CMake sccache error)
+          # - cuda: '10.2'
+          #   image: 'philippvk/package-cu102:b2eab7a'
           # Conda forge is not shipping a cudnn package with support for CUDA 11.0
           # - cuda: '11.0'
           #   image: 'philippvk/package-cu110:b2eab7a'

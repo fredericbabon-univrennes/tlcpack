@@ -22,8 +22,9 @@ jobs:
         config:
           - cuda: 'none'
             image: 'philippvk/package-cpu:b2eab7a'
-          - cuda: '10.2'
-            image: 'philippvk/package-cu102:b2eab7a'
+          # Unsupported (CMake sccache error)
+          # - cuda: '10.2'
+          #   image: 'philippvk/package-cu102:b2eab7a'
           # CUDA 11.0 is not supported for Conda build,
           # Let's drop support here as well.
           # - cuda: '11.0'
