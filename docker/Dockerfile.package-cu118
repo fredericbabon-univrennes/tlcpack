@@ -53,3 +53,4 @@ ENV C_INCLUDE_PATH=/usr/local/cuda/include:${C_INCLUDE_PATH}
 ENV LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/compact:${LIBRARY_PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cuda/compact:${LD_LIBRARY_PATH}
 ENV AUDITWHEEL_PLAT=manylinux2014_x86_64
+ENV CUDA_VERSION=11.8
