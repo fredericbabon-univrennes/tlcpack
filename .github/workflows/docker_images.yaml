@@ -23,6 +23,7 @@ jobs:
           - cu117
           - cu118
           - cu121
+          - cu124
     runs-on: ubuntu-latest
     steps:
     - name: Maximize build space
