@@ -39,8 +39,7 @@ jobs:
         conda info
         conda list
     - name: Wheel-Site-Checkout
-      # if: ${{ github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack' }}
-      if: ${{ github.ref == 'refs/heads/main' }}
+      if: ${{ github.ref == 'refs/heads/main' && github.repository == 'tlc-pack/tlcpack' }}
       env:
         GITHUB_TOKEN: ${{ secrets.TLCPACK_GITHUB_TOKEN }}
       run: |
