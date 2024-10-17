@@ -53,7 +53,11 @@ outputs:
 {% endif %} # [cuda]
         - cudnn >=7.6.0 # [cuda]
       run:
+{% if cuda_version | float >= 12.0 %} # [cuda]
+        - {{ pin_compatible('cuda-toolkit', lower_bound=cuda_version, max_pin='x.x') }}  # [cuda]
+{% else %} # [cuda]
         - {{ pin_compatible('cudatoolkit', lower_bound=cuda_version, max_pin='x.x') }}  # [cuda]
+{% endif %} # [cuda]
         - cudnn >=7.6.0 # [cuda]
 
   - name: {{ pkg_name }}
@@ -64,7 +68,7 @@ outputs:
       host:
         - python
         - setuptools
-        - cython
+        - cython < 3.0
         - {{ pin_subpackage(pkg_name + '-libs', exact=True) }}
       run:
         - python
