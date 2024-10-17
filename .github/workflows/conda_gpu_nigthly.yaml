@@ -37,6 +37,8 @@ jobs:
             image: 'philippvk/package-cu118:481644c'
           - cuda: '12.1'
             image: 'philippvk/package-cu121:481644c'
+          - cuda: '12.4'
+            image: 'philippvk/package-cu124:481644c'
 
     runs-on: ubuntu-latest
 
