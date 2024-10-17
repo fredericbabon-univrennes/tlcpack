@@ -21,26 +21,26 @@ jobs:
         # matrix of build configs
         config:
           - cuda: 'none'
-            image: 'philippvk/package-cpu:b2eab7a'
+            image: 'philippvk/package-cpu:481644c'
           # Unsupported (CMake sccache error)
           # - cuda: '10.2'
-          #   image: 'philippvk/package-cu102:b2eab7a'
+          #   image: 'philippvk/package-cu102:481644c'
           # CUDA 11.0 is not supported for Conda build,
           # Let's drop support here as well.
           # - cuda: '11.0'
-          #   image: 'philippvk/package-cu110:b2eab7a'
+          #   image: 'philippvk/package-cu110:481644c'
           - cuda: '11.1'
-            image: 'philippvk/package-cu111:b2eab7a'
+            image: 'philippvk/package-cu111:481644c'
           - cuda: '11.3'
-            image: 'philippvk/package-cu113:b2eab7a'
+            image: 'philippvk/package-cu113:481644c'
           - cuda: '11.6'
-            image: 'philippvk/package-cu116:b2eab7a'
+            image: 'philippvk/package-cu116:481644c'
           - cuda: '11.7'
-            image: 'philippvk/package-cu117:b2eab7a'
+            image: 'philippvk/package-cu117:481644c'
           - cuda: '11.8'
-            image: 'philippvk/package-cu118:a633238'
+            image: 'philippvk/package-cu118:481644c'
           - cuda: '12.1'
-            image: 'philippvk/package-cu121:a633238'
+            image: 'philippvk/package-cu121:481644c'
 
     runs-on: ubuntu-latest
 
