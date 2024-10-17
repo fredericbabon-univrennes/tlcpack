@@ -46,7 +46,7 @@ outputs:
       host:
         - zlib
         - llvmdev ==10.0.0
-{% if cuda_version | replace('.', '') == "12" %}
+{% if cuda_version | float >= 12.0 %} # [cuda]
         - {{ pin_compatible('cuda-toolkit', lower_bound=cuda_version, max_pin='x.x') }}  # [cuda]
 {% else %} # [cuda]
         - {{ pin_compatible('cudatoolkit', lower_bound=cuda_version, max_pin='x.x') }}  # [cuda]
