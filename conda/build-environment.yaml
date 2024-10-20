@@ -18,3 +18,4 @@ dependencies:
   - scipy
   - cython < 3.0
   - pip
+  - libffi == 3.4.4
