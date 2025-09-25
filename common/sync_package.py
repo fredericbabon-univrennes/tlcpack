@@ -8,7 +8,7 @@ import argparse
 # Modify the following two settings during release
 # -----------------------------------------------------------
 # Tag used for stable build.
-__stable_build__ = "v0.12.0"
+__stable_build__ = "v0.21.0"
 # -----------------------------------------------------------
 
 def py_str(cstr):
@@ -179,11 +179,11 @@ def main():
 
     package_name = args.package_name or args.build_type
 
-    if not args.skip_checkout:
-        if "nightly" not in args.build_type:
+    #if not args.skip_checkout:
+    #    if "nightly" not in args.build_type:
             checkout_source(args.src, __stable_build__)
-        else:
-            checkout_source(args.src, args.revision)
+    #    else:
+    #        checkout_source(args.src, args.revision)
 
     update_libinfo(args)
     update_setup(args, package_name)
