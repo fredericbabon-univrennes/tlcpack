@@ -92,7 +92,8 @@ def update_libinfo(args):
     package_ver = pub_ver if args.use_public_version else local_ver
 
     update(
-        os.path.join(args.src, "python", "tvm", "libinfo.py"),
+        #os.path.join(args.src, "python", "tvm", "libinfo.py"),
+        os.path.join(args.src, "python", "tvm","_ffi", "libinfo.py"),
         [("(?<=__version__ = \")[^\"]+", package_ver)],
         args.dry_run
     )
