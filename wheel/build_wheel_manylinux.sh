@@ -99,7 +99,7 @@ echo set\(USE_CMSISNN ON\) >> config.cmake
 if [[ ${CUDA} != "none" ]]; then
     echo set\(USE_CUDA ON\) >> config.cmake
     echo set\(USE_CUBLAS ON\) >> config.cmake
-    echo set\(USE_CUDNN ON\) >> config.cmake
+    echo set\(USE_CUDNN OFF\) >> config.cmake
 fi
 
 # compile the tvm
