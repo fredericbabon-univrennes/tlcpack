@@ -187,8 +187,9 @@ def main():
     #        checkout_source(args.src, args.revision)
 
     update_libinfo(args)
-    update_setup(args, package_name)
     update_conda(args, package_name)
+    update_setup(args, package_name)
+    
 
 
 if __name__ == "__main__":
