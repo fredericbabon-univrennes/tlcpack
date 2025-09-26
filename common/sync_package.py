@@ -181,7 +181,7 @@ def main():
 
     #if not args.skip_checkout:
     #    if "nightly" not in args.build_type:
-            checkout_source(args.src, __stable_build__)
+    checkout_source(args.src, __stable_build__)
     #    else:
     #        checkout_source(args.src, args.revision)
 
